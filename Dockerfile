@@ -14,7 +14,9 @@ WORKDIR /app
 
 # Get the github repo (no need for git)
 RUN wget --no-check-certificate https://github.com/skgtech/skgtech.github.io/archive/master.tar.gz && \
-    tar zxf master.tar.gz -C /app/skgtech.io && rm -f master.tar.gz
+    tar -zxvf master.tar.gz && \
+    rm -f master.tar.gz && \
+    mv /app/skgtech.github.io-master /app/skgtech.io
 
 # Install npm packages
 WORKDIR /app/skgtech.io
