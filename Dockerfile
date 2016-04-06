@@ -25,8 +25,10 @@ RUN mkdir -p /dist/node_modules && \
     npm install
 
 WORKDIR /app/skgtech.io
+VOLUME /app/skgtech.io
 
 # Expose ports to host
 EXPOSE 3000 3001
 
-ENTRYPOINT /app/skgtech.io/node_modules/.bin/gulp
+# Default command
+CMD exec gulp
