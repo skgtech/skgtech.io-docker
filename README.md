@@ -19,7 +19,7 @@ See more about "Thessaloniki Tech Community" at [skgtech.io](http://skgtech.io).
 
 ### Usage
 
-  - Pull the docker image `git pull skgtech/website`
+  - Pull the docker image `docker pull skgtech/website`
   - Fork the official repository [github.com/skgtech/skgtech.github.io](https://github.com/skgtech/skgtech.github.io). You can use [hub](https://hub.github.com/) to do this from CLI if you like
   - Clone your own repository locally (skip this if you have used **hub**)
   - Create a new Docker container
@@ -34,7 +34,7 @@ See more about "Thessaloniki Tech Community" at [skgtech.io](http://skgtech.io).
 
 ```
 // Pull latest docker image
-git pull skgtech/website
+docker pull skgtech/website
 
 // Fork repository https://github.com/skgtech/skgtech.github.io.
 // If you are using https://hub.github.com/ you can do this easily like this:
