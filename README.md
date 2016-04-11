@@ -72,4 +72,4 @@ root@dfg434h434e: gulp
 
 ### License
 
-**MIT**. See more at [LICENSE](LICENSE).
+**MIT**. See more at [LICENSE](https://github.com/skgtech/skgtech.io-docker/blob/master/LICENSE).
