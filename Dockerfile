@@ -31,4 +31,4 @@ VOLUME /app/skgtech.io
 EXPOSE 3000 3001
 
 # Default command
-CMD exec gulp
+CMD node_modules/.bin/gulp
