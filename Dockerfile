@@ -22,7 +22,8 @@ RUN mkdir -p /dist/node_modules && \
     ln -s /dist/node_modules /app/skgtech.io/node_modules && \
     ln -s /dist/_site /app/skgtech.io/_site && \
     cd /app/skgtech.io && \
-    npm install
+    set progress=false && \
+    npm install --global --progress=false
 
 WORKDIR /app/skgtech.io
 VOLUME /app/skgtech.io
