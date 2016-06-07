@@ -7,24 +7,22 @@ MAINTAINER skgtech <hello@skgtech.io>
 # Install gems
 RUN gem install jekyll -v '3.1.2'
 
-WORKDIR /app
-
 # Install app npm packages
-RUN mkdir -p /dist/node_modules && \
-    mkdir -p /dist/_site && \
-    ln -s /dist/node_modules /app/skgtech.io/node_modules && \
-    ln -s /dist/_site /app/skgtech.io/_site && \
-    cd /app/skgtech.io && \
-    wget https://raw.githubusercontent.com/skgtech/skgtech.github.io/master/package.json && \
+RUN mkdir -p /app/skgtech.io/
+
+WORKDIR /app/
+
+RUN wget --no-check-certificate https://raw.githubusercontent.com/skgtech/skgtech.github.io/master/package.json && \
     set progress=false && \
-    npm install --global --progress=false
+    npm install --progress=false
 
 # Get the github repo (no need for git)
 RUN wget --no-check-certificate https://github.com/skgtech/skgtech.github.io/archive/master.tar.gz && \
     tar -zxvf master.tar.gz && \
     mv /app/skgtech.github.io-master/ /app/skgtech.io/ && \
     rm -rf /app/skgtech.github.io-master && \
-    rm -f master.tar.gz
+    rm -f master.tar.gz && \
+    ln -s /app/node_modules /app/skgtech.io/node_modules
 
 WORKDIR /app/skgtech.io
 VOLUME /app/skgtech.io
